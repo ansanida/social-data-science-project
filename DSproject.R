@@ -31,9 +31,6 @@ tracts <- tracts(state = 'NJ', county = c(1, 3, 7, 13, 17, 21, 23, 31, 39), cb=T
 geo<-geo.make(state=c("NJ"),
               county=c(1, 3, 7, 13, 17, 21, 23, 31, 39), tract="*")
 
-#income<-acs.fetch(endyear = 2012, span = 5, geography = geo,
-                  #table.number = "B19001", col.names = "pretty")
-
 income<-acs.fetch(endyear = 2019, span = 5, geography = geo,
                   table.number = "B19001", col.names = "pretty")
 print(income)
@@ -61,7 +58,6 @@ income_df$percent <- 100*((income_df$range_75 + income_df$range_100 + income_df$
 #print(income_df)
 
 income_merged<- geo_join(tracts, income_df, "GEOID", "GEOID")
-# there are some tracts with no land that we should exclude
 income_merged <- income_merged[income_merged$ALAND>0,]
 
 popup <- paste0("GEOID: ", income_merged$GEOID, "<br>", "Percent of Households above $75k: ", round(income_merged$percent,2))
