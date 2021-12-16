@@ -74,12 +74,3 @@ private.town.zipcodes#writeOGR(nj_income, dsn = "nj_income.shp", driver = FALSE)
 st_write(nj_income, "nj_income.shp", driver = "ESRI Shapefile")
 write.csv(public.join.table, "public_join_table.csv")
 write.csv(private.join.table, "private_join_table.csv")
-
-nj_zctas <- zctas(cb = TRUE,
-                  starts_with = c(public.town.zipcodes),
-                  year = 2018)
-private.nj_zctas <- zctas(cb = TRUE,
-                          starts_with = c(private.town.zipcodes),
-                          year = 2018)
-st_write(nj_zctas, "nj_zctas.shp", driver = "ESRI Shapefile", append = FALSE)
-st_write(nj_zctas, "private_nj_zctas.shp", driver = "ESRI Shapefile", append = FALSE)
