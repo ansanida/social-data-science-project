@@ -1,5 +1,3 @@
-knitr::opts_chunk$set(echo = TRUE)
-
 library(knitr)
 library(rvest)
 library(tidyverse)
@@ -26,17 +24,17 @@ library(usmap)
 
 options(tigris_use_cache = TRUE)
 
-public.join.table <- read.csv(file = "/Users/nidaansari/Desktop/sds_project/public_join_table.csv")
-private.join.table <- read.csv(file = "/Users/nidaansari/Desktop/sds_project/private_join_table.csv")
+public.join.table <- read.csv(file = "public_join_table.csv")
+private.join.table <- read.csv(file = "private_join_table.csv")
 
 public.town.zipcodes <- public.join.table$ZIPCODE
 private.town.zipcodes <- private.join.table$ZIPCODE 
-private.town.zipcodes
+#private.town.zipcodes # TD: Commenting this out, otherwise this gets printed somewhere as R runs, taking up lots of memory
 #public.town.zipcodes
 #public.town.zipcodes <- paste0("0", public.town.zipcodes)
 #private.town.zipcodes <- paste0("0", private.town.zipcodes)
-nj_income <- st_read("/Users/nidaansari/Desktop/sds_project/nj_income.shp")
-nj_income
+nj_income <- st_read("nj_income.shp")
+#nj_income # TD: Same here
 nj_zctas <- zctas(cb = TRUE,
                   starts_with = c(public.town.zipcodes),
                   year = 2018)
