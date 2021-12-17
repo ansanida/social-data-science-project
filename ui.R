@@ -7,8 +7,8 @@ fluidPage(
       radioButtons("map_choice", "Type of College",
                    choiceNames = list("Public Colleges", "Private Colleges"),
                    choiceValues = list("Public Colleges", "Private Colleges")),
-      leafletOutput('distPlot')
-      
+      #leafletOutput('distPlot')
+      tmapOutput("distPlot")
       )
   
     )
