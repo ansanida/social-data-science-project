@@ -24,10 +24,10 @@ library(sf)
 library(tmap)
 
 options(tigris_use_cache = TRUE)
-#getwd()
+getwd()
 #setwd("/Users/nidaansari/Desktop/sds_project")
-public.join.table <- read.csv(file = "/Users/nidaansari/Desktop/sds_project/public_join_table.csv")
-private.join.table <- read.csv(file = "/Users/nidaansari/Desktop/sds_project/private_join_table.csv")
+public.join.table <- read.csv("/Users/nidaansari/Desktop/sds_project/public_join_table.csv")
+private.join.table <- read.csv("/Users/nidaansari/Desktop/sds_project/private_join_table.csv")
 
 public.town.zipcodes <- public.join.table$ZIPCODE
 private.town.zipcodes <- private.join.table$ZIPCODE 
@@ -82,3 +82,5 @@ function(input, output) {
     }
   })
 }
+
+#runApp('/Users/nidaansari/Desktop/sds_project/')
