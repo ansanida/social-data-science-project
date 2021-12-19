@@ -1,5 +1,5 @@
 library(shiny)
 library(rsconnect)
 getwd()
-setwd("/Users/nidaansari/Desktop/sds_project")
+#setwd("/Users/nidaansari/Desktop/sds_project")
 deployApp()
